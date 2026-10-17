@@ -35,7 +35,10 @@ body {
   cursor: pointer;
 }
 
-.button:hover, .titlelink:hover {
+.button:hover{
+  color: #FDF9F3;
+  background: #FFA54D;
+  box-shadow: 5px 5px 0 #E27233;
   transform: translate(-2px, -2px);
 }
 
