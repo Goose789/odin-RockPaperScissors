@@ -8,6 +8,17 @@ body {
   padding: 50px;
 }
 
+.results {
+  display: flex;
+  justify-content: space-around;
+}
+
+.resultsTitle {
+  width: 250px;
+  padding: 10px;
+  text-align: center;
+}
+
 .buttons {
   display: flex;
   gap: 20px;
@@ -23,8 +34,10 @@ body {
   font-size: 50px; 
   padding: 20px;
   display: inline-block;
+  text-decoration: none;
 }
-.button, .titlelink {
+
+.button, .titlelink, .resultsTitle {
   color: #FDF9F3;
   background: #E27233;
   font-weight: bold;
@@ -35,7 +48,7 @@ body {
   cursor: pointer;
 }
 
-.button:hover{
+.button:hover {
   color: #FDF9F3;
   background: #FFA54D;
   box-shadow: 5px 5px 0 #E27233;
