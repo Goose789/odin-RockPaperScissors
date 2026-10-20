@@ -7,15 +7,30 @@ function getRandomInt(max) {
 }
 
 function getComputerChoice() {
-    const list = ["rock", "paper", "scissors"]
-    const computerChoice = list[getRandomInt(3)]
-    return computerChoice
+    const list = ["rock", "paper", "scissors"];
+    const computerChoice = list[getRandomInt(3)];
+    const image = document.querySelector(".computerImage");
+    if (computerChoice === "rock") {
+        image.src = "images/rock.jpg";       
+    } else if (computerChoice === "paper") {
+        image.src = "images/paper.jpg";
+    } else {
+        image.src = "images/scissors.jpg";
+    };
+    return computerChoice;
 }
 
-function getHumanChoice() {
-    const humanChoice = prompt("Rock, Paper, Scissors ? ").toLowerCase()
-    return humanChoice
-}
+const buttons = document.querySelectorAll("button")
+
+const image = document.querySelector(".humanImage");
+let humanChoice = "";
+buttons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+            const humanChoice = event.currentTarget.id;
+            image.src = `images/${humanChoice}.jpg`;
+    });
+});
+
 
 let humanScore = 0;
 let computerScore = 0;
@@ -45,6 +60,13 @@ function playRound(computerSelection,humanSelection) {
 return result + "\nHuman score: " + humanScore + "\nComputer score: " + computerScore
 }
 
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+    const computerChoice = getComputerChoice();
+    playRound(computerChoice,humanChoice);
+    });
+});
+
 /*
 for (let i = 0; i < 5; i++) {
     const computerChoice = getComputerChoice()
@@ -62,12 +84,6 @@ if (humanScore > computerScore) {
 }
         */
 
-const buttons = document.querySelectorAll("button")
 
-buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-    const computerChoice = getComputerChoice();
-    const humanChoice = getHumanChoice();
-    playRound(computerChoice,humanChoice);
-    });
-});
+
+

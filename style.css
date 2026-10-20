@@ -10,7 +10,16 @@ body {
 
 .results {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 300px;
+}
+
+.imagesdiv {
+  height: 400px;
+}
+
+.computerImage, .humanImage {
+  height: 275px;
 }
 
 .resultsTitle {
@@ -45,6 +54,9 @@ body {
   border-radius: 8px;
   box-shadow: 5px 5px 0 #CB4E24;
   transition: transform 150ms ease;
+}
+
+.button, .titlelink {
   cursor: pointer;
 }
 
